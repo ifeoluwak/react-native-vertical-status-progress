@@ -4,7 +4,7 @@ import StatusItemProgress from './StatusItem';
 import type { Status, StatusProgressProps } from './types';
 import { colors } from './color';
 
-const VerticalStatusProgress = ({
+export function VerticalStatusProgress({
   statuses = [],
   currentStatus,
   showLastStick,
@@ -22,7 +22,7 @@ const VerticalStatusProgress = ({
   renderBall,
   renderStick,
   renderChevron,
-}: StatusProgressProps) => {
+}: StatusProgressProps) {
   const [currentStatusIndex, setCurrentStatusIndex] = useState<string>('');
 
   /** Open accordion */
@@ -125,6 +125,4 @@ const VerticalStatusProgress = ({
       })}
     </View>
   );
-};
-
-export default VerticalStatusProgress;
+}

@@ -118,8 +118,8 @@ See example for more.
 | `subTitleStyle`           | `TextStyle`                                                          | -       | Style for the subtitle text.                                                |
 | `accordionTitleViewStyle` | `ViewStyle`                                                          | -       | Style for the accordion title view.                                         |
 | `accordionChevronViewStyle`| `ViewStyle`                                                         | -       | Style for the accordion chevron view.                                       |
-| `renderBall`              | `(label: Statuses, idx: number) => React.ReactNode`                  | -       | Function to render a custom ball component.                                 |
-| `renderStick`             | `(label: Statuses, idx: number) => React.ReactNode`                  | -       | Function to render a custom stick component.                                |
+| `renderBall`              | `(label: Statuses, idx: number, isPrev: boolean, isFuture: boolean) => React.ReactNode`                  | -       | Function to render a custom ball component.                                 |
+| `renderStick`             | `(label: Statuses, idx: number, isPrev: boolean, isFuture: boolean) => React.ReactNode`                  | -       | Function to render a custom stick component.                                |
 | `renderChevron`           | `(open: boolean, index: number) => React.ReactNode`                  | -       | Function to render a custom chevron component.                              |
 
 ## Customization

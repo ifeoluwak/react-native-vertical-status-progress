@@ -12,7 +12,7 @@ import {
 
 import { Colors, Header } from 'react-native/Libraries/NewAppScreen';
 
-import VerticalStatusProgress from 'react-native-vertical-status-progress';
+import { VerticalStatusProgress } from 'react-native-vertical-status-progress';
 import { colors } from '../../src/color';
 
 const statuses = [

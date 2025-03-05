@@ -1,6 +1,6 @@
 {
   "name": "react-native-vertical-status-progress",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A component to show the progress of a process with different statuses. Works with Expo and React Native.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
