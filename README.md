@@ -7,7 +7,7 @@ It is compatible with both Expo and React Native projects, making it versatile a
 
 ## Preview
 
-![Vertical Status Progress](./imgs/vertical-status-progress.png)
+<img src="./imgs/vertical-status-progress.png" alt="Vertical Status Progress" width="300" />
 
 ## Features
 
