@@ -4,7 +4,7 @@ export const colors = {
   ACCENT_BLUE: '#16295A',
   DARK_BLUE: '#0B152D',
   GREY_LIGHT: '#757575',
-  DISABLED: '#EBEBEB',
+  DISABLED: '#D3D3D3',
   BLACK: '#000000',
   TRANSPARENT: 'transparent',
 };

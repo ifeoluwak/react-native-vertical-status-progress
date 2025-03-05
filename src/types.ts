@@ -15,20 +15,21 @@ export type StatusColors = {
   futureStickColor: string;
 };
 
-export type Statuses = {
+export type Status = {
   title: string;
   subtitle: string;
   status: string;
   renderContent?: React.ReactNode;
+  testID?: string;
 };
 
 export type StatusProgressProps = {
-  statuses: Statuses[];
+  statuses: Status[];
   currentStatus: string;
   showLastStick?: boolean;
   statusColors?: StatusColors;
   showOrder: boolean;
-  accordion: boolean;
+  accordion?: boolean;
   openAccordionStatus?: boolean;
   containerStyle?: ViewStyle;
   contentWrapperStyle?: ViewStyle;
@@ -37,8 +38,18 @@ export type StatusProgressProps = {
   subTitleStyle?: TextStyle;
   accordionTitleViewStyle?: ViewStyle;
   accordionChevronViewStyle?: ViewStyle;
-  renderBall?: (label: Statuses, idx: number) => React.ReactNode;
-  renderStick?: (label: Statuses, idx: number) => React.ReactNode;
+  renderBall?: (
+    label: Status,
+    idx: number,
+    isPrev: boolean,
+    isFuture: boolean
+  ) => React.ReactNode;
+  renderStick?: (
+    label: Status,
+    idx: number,
+    isPrev: boolean,
+    isFuture: boolean
+  ) => React.ReactNode;
   renderChevron?: (open: boolean, index: number) => React.ReactNode;
 };
 
@@ -46,16 +57,16 @@ export type StatusItemProps = Omit<
   StatusProgressProps,
   'statuses' | 'currentStatus' | 'openAccordionStatus'
 > & {
-  status: Statuses;
+  status: Status;
   idx: number;
   isLastStick: boolean;
   isSelected: boolean;
   isPrev: boolean;
   isFuture: boolean;
   showOrder: boolean;
-  getSubTitleColor: (label: Statuses, idx: number) => string | undefined;
-  getTitleColor: (label: Statuses, idx: number) => string | undefined;
-  getBallColor: (label: Statuses, idx: number) => string;
-  getStickColor: (label: Statuses, idx: number) => string;
+  getSubTitleColor: (label: Status, idx: number) => string | undefined;
+  getTitleColor: (label: Status, idx: number) => string | undefined;
+  getBallColor: (label: Status, idx: number) => string;
+  getStickColor: (label: Status, idx: number) => string;
   setIdxOpen: (idx: string | null) => void;
 };

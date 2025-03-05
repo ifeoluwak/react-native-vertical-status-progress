@@ -20,14 +20,19 @@ export default function AccordionContent({
         duration: 500,
         useNativeDriver: true,
       }).start();
+    } else {
+      fadeAnim.setValue(1);
     }
     return () => {
-      fadeAnim.setValue(0);
+      if (accordion) fadeAnim.setValue(0);
     };
   }, [fadeAnim, accordion, isSelected]);
 
   return (
-    <Animated.View style={{ opacity: fadeAnim, paddingRight: 20 }}>
+    <Animated.View
+      style={{ opacity: fadeAnim, paddingRight: 20 }}
+      accessibilityLabel="accordion content item"
+    >
       {accordion && isSelected && renderContent ? renderContent : null}
       {!accordion && renderContent}
     </Animated.View>

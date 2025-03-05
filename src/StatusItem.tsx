@@ -32,10 +32,11 @@ const StatusItemProgress = ({
   status,
   isLastStick,
   showOrder,
-  accordion,
+  accordion = false,
   showLastStick,
   isSelected,
   isPrev,
+  isFuture,
   setIdxOpen,
   contentWrapperStyle,
   contentHeaderStyle,
@@ -69,10 +70,12 @@ const StatusItemProgress = ({
         flexDirection: 'row',
         opacity: fadeAnim,
       }}
+      accessibilityLabel={status.title}
+      testID={status?.testID}
     >
       <View style={{ alignItems: 'center', width: '7%', paddingTop: 3 }}>
         {renderBall ? (
-          renderBall(status, idx)
+          renderBall(status, idx, isPrev, isFuture)
         ) : (
           <View
             style={[
@@ -88,7 +91,10 @@ const StatusItemProgress = ({
               </Text>
             )}
             {showOrder && !isPrev && (
-              <Text style={{ fontSize: 10, color: colors.PRIMARY_WHITE }}>
+              <Text
+                style={{ fontSize: 10, color: colors.PRIMARY_WHITE }}
+                numberOfLines={1}
+              >
                 {idx + 1}
               </Text>
             )}
@@ -96,7 +102,7 @@ const StatusItemProgress = ({
         )}
         {showLastStick || !isLastStick ? (
           renderStick ? (
-            renderStick(status, idx)
+            renderStick(status, idx, isPrev, isFuture)
           ) : (
             <View
               style={[
@@ -158,13 +164,13 @@ const StatusItemProgress = ({
             ) : null}
           </View>
           {accordion ? (
-            <View style={[accordionChevronViewStyle, { width: '10%' }]}>
+            <View style={[{ width: '10%' }, accordionChevronViewStyle]}>
               {accordion && isSelected
                 ? renderChevron?.(true, idx) || <ChevronOpen />
                 : renderChevron?.(false, idx) || <ChevronClose />}
             </View>
           ) : (
-            <View style={[accordionChevronViewStyle, { width: '10%' }]} />
+            <View style={[{ width: '10%' }, accordionChevronViewStyle]} />
           )}
         </TouchableOpacity>
         <AccordionContent

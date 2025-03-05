@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { useCallback, useEffect, useState } from 'react';
 import StatusItemProgress from './StatusItem';
-import type { Statuses, StatusProgressProps } from './types';
+import type { Status, StatusProgressProps } from './types';
 import { colors } from './color';
 
 const VerticalStatusProgress = ({
@@ -10,7 +10,7 @@ const VerticalStatusProgress = ({
   showLastStick,
   showOrder,
   statusColors,
-  accordion,
+  accordion = false,
   openAccordionStatus,
   containerStyle,
   contentWrapperStyle,
@@ -52,7 +52,7 @@ const VerticalStatusProgress = ({
     [currentStatusIndex, statuses]
   );
 
-  const getBallColor = (label: Statuses, idx: number) => {
+  const getBallColor = (label: Status, idx: number) => {
     if (label.status === currentStatusIndex) {
       return statusColors?.currentBallColor || colors.BRIGHT_TEAL;
     }
@@ -62,7 +62,7 @@ const VerticalStatusProgress = ({
       : statusColors?.futureBallColor || colors.DISABLED;
   };
 
-  const getStickColor = (label: Statuses, idx: number) => {
+  const getStickColor = (label: Status, idx: number) => {
     if (label.status === currentStatusIndex) {
       return statusColors?.currentStickColor || colors.BRIGHT_TEAL;
     }
@@ -72,7 +72,7 @@ const VerticalStatusProgress = ({
       : statusColors?.futureStickColor || colors.DISABLED;
   };
 
-  const getTitleColor = (label: Statuses, idx: number) => {
+  const getTitleColor = (label: Status, idx: number) => {
     if (label.status === currentStatusIndex) {
       return statusColors?.currentTitleColor;
     }
@@ -81,7 +81,7 @@ const VerticalStatusProgress = ({
       : statusColors?.futureTitleColor || colors.GREY_LIGHT;
   };
 
-  const getSubTitleColor = (label: Statuses, idx: number) => {
+  const getSubTitleColor = (label: Status, idx: number) => {
     if (label.status === currentStatusIndex) {
       return statusColors?.currentSubtitleColor;
     }

@@ -89,16 +89,87 @@ const App = () => {
 
 export default App;
 ```
+See example for more.
 
 ## Props
 
-| Prop       | Description                                      | Default   |
-|------------|--------------------------------------------------|-----------|
-| `statuses` | An array of status objects with `label` and `completed` properties | `[]`      |
-| `style`    | Custom style for the component                   | `null`    |
-| `lineColor`| Color of the connecting line between statuses    | `#000`    |
-| `completedColor` | Color of the completed status indicator    | `#0f0`    |
-| `statuses`        | An array of status objects with `label` and `completed` properties | `[]`      |
+| Prop                      | Type                                                                 | Default | Description                                                                 |
+|---------------------------|----------------------------------------------------------------------|---------|-----------------------------------------------------------------------------|
+| `statuses`                | `Status[]`                                                         | -       | An array of status objects containing title, subtitle, status, and optional renderContent. |
+| `currentStatus`           | `string`                                                             | -       | The current status to be highlighted.                                       |
+| `showLastStick`           | `boolean`                                                            | `false` | Whether to show the last stick or not.                                      |
+| `statusColors`            | `StatusColors`                                                       | -       | An object defining the colors for different status stages. Example: `{ prevBallColor: 'red', currentBallColor: 'green', futureBallColor: 'blue', prevStickColor: 'red', currentStickColor: 'green', futureStickColor: 'blue', prevTitleColor: 'red', currentTitleColor: 'green', futureTitleColor: 'blue', prevSubtitleColor: 'red', currentSubtitleColor: 'green', futureSubtitleColor: 'blue' }` |
+| `showOrder`               | `boolean`                                                            | `false` | Whether to show the order of statuses in numerals.                                      |
+| `accordion`               | `boolean`                                                            | `false` | Whether to enable accordion functionality.                                  |
+| `openAccordionStatus`     | `boolean`                                                            | `false` | Whether the accordion for current status is open by default.                                   |
+| `containerStyle`          | `ViewStyle`                                                          | -       | Style for the container view.                                               |
+| `contentWrapperStyle`     | `ViewStyle`                                                          | -       | Style for the accordion content wrapper view.                                         |
+| `contentHeaderStyle`      | `ViewStyle`                                                          | -       | Style for the content header view.                                          |
+| `titleStyle`              | `TextStyle`                                                          | -       | Style for the title text.                                                   |
+| `subTitleStyle`           | `TextStyle`                                                          | -       | Style for the subtitle text.                                                |
+| `accordionTitleViewStyle` | `ViewStyle`                                                          | -       | Style for the accordion title view.                                         |
+| `accordionChevronViewStyle`| `ViewStyle`                                                         | -       | Style for the accordion chevron view.                                       |
+| `renderBall`              | `(label: Statuses, idx: number) => React.ReactNode`                  | -       | Function to render a custom ball component.                                 |
+| `renderStick`             | `(label: Statuses, idx: number) => React.ReactNode`                  | -       | Function to render a custom stick component.                                |
+| `renderChevron`           | `(open: boolean, index: number) => React.ReactNode`                  | -       | Function to render a custom chevron component.                              |
+
+## Customization
+
+You can customize the appearance of the `react-native-vertical-status-progress` component by passing in custom styles and render functions. Here are some examples:
+
+### Custom Ball Component
+
+```jsx
+const renderCustomBall = (label, idx, isPrev, isFuture) => (
+  <View style={{ backgroundColor: isPrev ? 'blue' : 'grey', width: 16, height: 16, alignItems: 'center', justifyContent: 'center', borderRadius: 4 }}>
+    <Text style={{ color: 'white', fontSize: 10 }}>{idx}</Text>
+  </View>
+);
+
+<VerticalStatusProgress
+  statuses={statuses}
+  renderBall={renderCustomBall}
+/>
+```
+
+### Custom Stick Component
+
+```jsx
+const renderCustomStick = (label, idx, isPrev, isFuture) => (
+  <View style={{ flex: 1, width: 5, backgroundColor: isPrev ? 'blue' : 'grey' }} />
+);
+
+<VerticalStatusProgress
+  statuses={statuses}
+  renderStick={renderCustomStick}
+/>
+```
+
+### Custom Chevron Component
+
+```jsx
+const renderCustomChevron = (open, index) => (
+  <Text>{open ? '-' : '+'}</Text>
+);
+
+<VerticalStatusProgress
+  statuses={statuses}
+  renderChevron={renderCustomChevron}
+/>
+```
+
+## Example Project
+
+For a complete example, check out the [example project](example/) in the repository. This project demonstrates how to use the `react-native-vertical-status-progress` component in a real-world application.
+
+## Troubleshooting
+
+If you encounter any issues while using the `react-native-vertical-status-progress` component, please check the [issues](https://github.com/your-repo/react-native-vertical-status-progress/issues) section on GitHub. You can also open a new issue if you don't find a solution to your problem.
+
+## Changelog
+
+See the [changelog](CHANGELOG.md) for a history of changes to this component.
+
 
 
 ## Contributing
