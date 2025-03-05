@@ -36,7 +36,7 @@ const statuses = [
     subtitle: 'We are verifying your account.',
     renderContent: (
       <View>
-        <Text style={{}}>
+        <Text>
           We will contact you shortly if we need any additional information.
           Please contact us if you have any questions. Check your email for
           updates.
@@ -51,7 +51,7 @@ const statuses = [
             marginTop: 10,
           }}
         >
-          <Text style={{ color: 'white' }}>Resend Email</Text>
+          <Text style={{ color: '#fff' }}>Resend Email</Text>
         </TouchableOpacity>
       </View>
     ),

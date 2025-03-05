@@ -29,7 +29,7 @@ const statuses = [
   {
     title: 'Sign Up Complete',
     subtitle: 'You have successfully signed up.',
-    status: 'open',
+    status: 'registered',
   },
   {
     title: 'Set up your account',
@@ -39,7 +39,7 @@ const statuses = [
         <Text>vbireuvgbireubgireuf</Text>
       </TouchableOpacity>
     ),
-    status: 'cancellation_previous',
+    status: 'setting_up',
   },
   {
     title: 'Account Verification',
@@ -48,15 +48,24 @@ const statuses = [
       <View>
         <Text>
           We will contact you shortly if we need any additional information.
-          Please contact us if you have any questions.
-          Check your email for updates.
+          Please contact us if you have any questions. Check your email for
+          updates.
         </Text>
-       <TouchableOpacity style={{ backgroundColor: '#adcaee', padding: 10, borderRadius: 5, width: 150, alignItems: 'center', marginTop: 10 }}>
-        <Text style={{ color: '#fff' }}>Resend Email</Text>
-       </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: colors.ACCENT_BLUE,
+            padding: 10,
+            borderRadius: 5,
+            width: 150,
+            alignItems: 'center',
+            marginTop: 10,
+          }}
+        >
+          <Text style={{ color: '#fff' }}>Resend Email</Text>
+        </TouchableOpacity>
       </View>
     ),
-    status: 'delivery_net',
+    status: 'verifying',
   },
   {
     title: 'Account Verified',
@@ -67,7 +76,6 @@ const statuses = [
     title: 'All Set!',
     subtitle:
       "You're all set up and ready to go. Start using your account now.",
-    status: 'incoming',
     renderContent: (
       <View>
         <Text>
@@ -78,6 +86,7 @@ const statuses = [
         </Text>
       </View>
     ),
+    status: 'ready',
   },
 ];
 
