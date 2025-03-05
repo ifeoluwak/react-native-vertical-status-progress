@@ -48,7 +48,14 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "expo",
+    "typescript",
+    "progress",
+    "status",
+    "status progress",
+    "vertical status progress",
+    "accordion"
   ],
   "repository": {
     "type": "git",
