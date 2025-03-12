@@ -23,7 +23,7 @@ npm install react-native-vertical-status-progress
 ## Usage
 
 ```jsx
-import VerticalStatusProgress from 'react-native-vertical-status-progress';
+import { VerticalStatusProgress } from 'react-native-vertical-status-progress';
 
 const statuses = [
   {
