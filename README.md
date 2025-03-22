@@ -173,12 +173,7 @@ For a complete example, check out the [example project](example/) in the reposit
 
 ## Troubleshooting
 
-If you encounter any issues while using the `react-native-vertical-status-progress` component, please check the [issues](https://github.com/your-repo/react-native-vertical-status-progress/issues) section on GitHub. You can also open a new issue if you don't find a solution to your problem.
-
-## Changelog
-
-See the [changelog](CHANGELOG.md) for a history of changes to this component.
-
+If you encounter any issues while using the `react-native-vertical-status-progress` component, please check the [issues](https://github.com/ifeoluwak/react-native-vertical-status-progress/issues) section on GitHub. You can also open a new issue if you don't find a solution to your problem.
 
 
 ## Contributing
